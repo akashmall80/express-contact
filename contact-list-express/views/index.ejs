@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1 id="page-heading">Contact List</h1>
+
+    <div>
+        <ul>
+            <%for(let i of contact_List) {%>
+                <li>
+                    <p><%= i.name%></p>
+                    <p><%= i.phone%></p>
+                    </li>
+                   
+                    <a href="/delete-contact/?phone=<%=i.phone %>">Close</a> 
+
+            <% } %>
+        </ul>
+    </div>
+
+    <form action="/create-contact" method="post">
+        <input type="text" name="name" id="" required>
+        <input type="number" name="phone" id="" required>
+        <input type="submit" name="" id="" required>
+    </form>
+    <script src="js/script.js"></script>
+</body>
+</html>
